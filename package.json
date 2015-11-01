@@ -1,0 +1,39 @@
+{
+  "name": "implementation",
+  "version": "0.1.0",
+  "description": "Require a modules implementation file when writing tests",
+  "main": "index.js",
+  "repository": "https://github.com/newscorpaus/implementation.git",
+  "homepage": "https://github.com/newscorpaus",
+  "config": {
+    "path_test": "./test",
+    "path_coverage": "./test/coverage"
+  },
+  "scripts": {
+    "clean": "rimraf $npm_package_config_path_coverage",
+    "test": "mocha $npm_package_config_path_test",
+    "lint": "eslint ./lib/**/*.js ./test/**/*.js",
+    "pretest": "npm run clean && npm run lint",
+    "cover": "istanbul cover --dir $npm_package_config_path_coverage _mocha $npm_package_config_path_test",
+    "precover": "npm test",
+    "coveralls": "cat ./test/coverage/lcov.info | coveralls",
+    "precoveralls": "npm run cover"
+  },
+  "keywords": [
+    "dependency-injection",
+    "di"
+  ],
+  "author": "Jonathan Barnett <jonathan.barnett@news.com.au>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "coveralls": "^2.11.4",
+    "eslint": "^1.8.0",
+    "istanbul": "^0.4.0",
+    "mocha": "^2.3.3",
+    "rimraf": "^2.4.3"
+  },
+  "dependencies": {
+    "callsite": "^1.0.0"
+  }
+}
