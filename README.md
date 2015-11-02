@@ -2,7 +2,7 @@
 
 Here at **newscorpau** we use a simple approach to dependency injection when writing modules for our node.js based applications.
 
-Internally it has become known as the `_implementation` approach and was first introduced by **@walkerd** at a time when mocking required dependencies became convoluted.
+Internally it has become known as the `_implementation` approach and was first introduced by **[@drew-walker](https://github.com/drew-walker)** at a time when mocking required dependencies became convoluted.
 
 The intent with this module is to formalise the approach and provide an easy way of writing tests for modules which follow this pattern.
 
