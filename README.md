@@ -66,14 +66,14 @@ It now becomes fairly straightforward to require a modules implementation and be
 var test           = require('tape'),
     implementation = require('implementation')('lib/config');
 
-test('path.join called correctly when no environment specified', function (assert) {
+test('path.join called correctly when no environment specified', function (t) {
 
     implementation(function () {
-        test.end();
+        t.end();
     }, {
         join : function(dirname, env) {
-            assert(dirname, 'should match __dirname').toEqual('some/dir');
-            assert(env, 'should match default environment').toEqual('development');
+            t.equal(dirname, 'some/dir', 'should match __dirname');
+            t.equal(env, 'development', 'should match default environment');
         }
     }, 'some/dir', 'development');
 
